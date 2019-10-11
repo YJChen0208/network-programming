@@ -29,11 +29,11 @@ int main(int argc, char *argv[]){
 			fscanf(fp, "%s", str1);
 			printf("split %s\n", str1);
 
-			char *p = strtok(str1, argv[argc-1]);
+			char *p = strtok(str1, argv[2]);
 
 			while(p != NULL){
 				printf("%s ", p);
-				p = strtok(NULL, "spec_char");
+				p = strtok(NULL, argv[2]);
 			}
 			printf("\n");
 			
@@ -62,11 +62,11 @@ int main(int argc, char *argv[]){
 		}else if(strcmp(command, "split") == 0){
 			scanf("%s", str1);
 
-			char *p = strtok(str1, argv[argc-1]);
-
+			char *p = strtok(str1, argv[2]);
+			// printf("%c\n", *argv[argc-1]);
 			while(p != NULL){
 				printf("%s ", p);
-				p = strtok(NULL, "spec_char");
+				p = strtok(NULL, argv[2]);
 			}
 			printf("\n");
 		}else if(strcmp(command, "exit") == 0){
